@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
+
   model: any = {};
 
   constructor(public accountService: AccountService, private router: Router) { }
@@ -17,11 +18,13 @@ export class NavComponent {
   ngOnInit(): void {
   }
 
-
   login() {
     this.accountService.login(this.model).subscribe({
       next: _ => this.router.navigateByUrl('/members'),
-      error: error => console.log(error)
+      error: error => {
+        console.log(error),
+        alert(error.error);
+      }
     });
   }
 

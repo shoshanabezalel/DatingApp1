@@ -14,6 +14,10 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
+import { CommonModule } from '@angular/common';
+// import 'ngx-toastr/toastr.css';
+
+// import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -27,14 +31,17 @@ import { MessagesComponent } from './messages/messages.component';
     MessagesComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     BsDropdownModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // ToastrModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
