@@ -14,7 +14,6 @@ export class TestErrorComponent {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    
   }
 
   get404Error() {
